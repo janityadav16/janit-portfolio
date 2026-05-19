@@ -992,7 +992,7 @@ footer {
 /* FIX 9 — SOCIAL CARDS */
 .social-links-row {
   display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)) !important;
   gap: 16px !important;
   margin-top: 32px !important;
 }
