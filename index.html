@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050507">
+  <meta name="description" content="Janit Yadav — Full Stack & AI Developer. Final-year BCA student at Manipal. Built Recutr.dev, an AI mock interview platform. CGPA 8.62. Available May 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://janit-portfolio.vercel.app/">
+  <meta property="og:title" content="Janit Yadav — Full Stack & AI Developer">
+  <meta property="og:description" content="Built Recutr.dev from scratch — a live AI interview platform. BCA Manipal, CGPA 8.62. Available May 2026.">
+  <meta property="og:image" content="https://janit-portfolio.vercel.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Janit Yadav — Full Stack & AI Developer">
+  <meta name="twitter:description" content="Built Recutr.dev from scratch. AI + Full Stack. Available May 2026.">
+  <meta name="twitter:image" content="https://janit-portfolio.vercel.app/og-image.png">
+  <!-- TODO: Replace /public/og-image.png with a 1200x630px screenshot of your hero section -->
+  <title>Janit Yadav | Full Stack Developer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23050507'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-weight='800' font-size='14' fill='%2300dbe9'>JY</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,600;0,700;1,700&family=Geist:wght@300;400;500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="forge_additions.css">
+</head>
+<body>
+
+  <!-- ── FEATURE 1: PAGE LOAD BOOT SEQUENCE ── -->
+  <div id="bootOverlay">
+    <div class="boot-terminal">
+      <div id="bootContent"></div>
+    </div>
+  </div>
+
+  <div class="mythic-transition">
+    <div class="void-bg"></div>
+    <canvas id="mythic-canvas"></canvas>
+    <div class="rune-circle"></div>
+    <div class="eclipse-portal"></div>
+  </div>
+  <div class="viewport-frame">
+    <div class="corner corner-tl"></div><div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div><div class="corner corner-br"></div>
+  </div>
+  <div class="scanline-overlay"></div>
+  <div class="scroll-progress"></div>
+
+  <nav>
+    <a href="#hero" class="nav-logo">
+      <span class="nav-logo-mark">JY</span>
+      <span class="nav-logo-name">Janit Yadav</span>
+      <span class="nav-status"><span class="status-dot"></span>SYSTEM: ACTIVE</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#skills">ARSENAL</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">HIRE ME →</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="#hero" onclick="closeMobile()">HOME</a>
+    <a href="#about" onclick="closeMobile()">ABOUT</a>
+    <a href="#skills" onclick="closeMobile()">ARSENAL</a>
+    <a href="#projects" onclick="closeMobile()">PROJECTS</a>
+    <a href="#contact" onclick="closeMobile()">CONTACT</a>
+    <a href="#contact" onclick="closeMobile()" style="color:var(--cyan)">HIRE ME →</a>
+  </div>
+
+  <main>
+
+    <!-- ══ HERO ══ -->
+    <section id="hero" class="hero">
+      <div class="hero-left" id="heroContent">
+        <div class="hero-eyebrow">
+          PROTO_UNIT // DEV_001
+          <div class="hero-eyebrow-line"></div>
+        </div>
+        <h1 class="hero-name"><span>JANIT</span><br><span>YADAV</span></h1>
+        <div class="role-badge">[ FULL STACK DEVELOPER ]</div>
+        <p class="hero-tagline">Building intelligent systems at the intersection of code and machine learning.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">VIEW PROJECTS →</a>
+          <a href="resume.pdf" class="btn-secondary" download>DOWNLOAD RESUME</a>
+        </div>
+
+        <!-- ── FEATURE 3: CURRENTLY BUILDING TICKER ── -->
+        <div class="status-ticker">
+          <div class="ticker-left">
+            <span class="pulse-dot"></span>
+            <span class="ticker-label">CURRENTLY BUILDING</span>
+          </div>
+          <div class="ticker-right">
+            <span class="ticker-text" id="tickerText">Recutr v2 — AI feedback engine rewrite</span>
+          </div>
+        </div>
+
+        <div class="hero-meta">REACT / PYTHON / DEEP LEARNING / NODE.JS</div>
+      </div>
+      <div class="hero-right">
+      </div>
+    </section>
+
+    <div class="cyber-divider"><div class="cd-line"></div><div class="cd-label">// INITIALIZING_BIO</div><div class="cd-line"></div></div>
+
+    <!-- ══ ABOUT ══ -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-eyebrow">
+          <svg class="katana-icon" viewBox="0 0 60 8" width="60" height="8"><line x1="0" y1="4" x2="48" y2="4" stroke="#00dbe9" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><polygon points="48,1 60,4 48,7" fill="#00dbe9" opacity="0.5"/><rect x="12" y="3" width="1" height="2" fill="#00dbe9" opacity="0.8"/><rect x="20" y="3" width="1" height="2" fill="#00dbe9" opacity="0.6"/><circle cx="2" cy="4" r="1.5" fill="#00dbe9" opacity="0.7"/></svg>
+          // 01 — ABOUT
+        </div>
+        <h2 class="section-heading">ABOUT <span class="accent">SYSTEM</span></h2>
+        <div class="heading-rule"></div>
+        <div class="about-grid">
+          <div class="about-canvas-wrap">
+            <div class="bio-module-inner">
+              <div class="bio-hud-header">NEURAL_INTERFACE // v2.4.0</div>
+              <div class="bio-scanline"></div>
+              <canvas id="neural-hud-canvas"></canvas>
+              
+              <!-- Corners -->
+              <div class="bio-corners">
+                <div class="c-tl"></div><div class="c-tr"></div>
+                <div class="c-bl"></div><div class="c-br"></div>
+              </div>
+              
+              <!-- Bottom HUD -->
+              <div class="bio-hud-bottom-left">
+                <div>NODES: <span id="hud-nodes">14</span></div>
+                <div>SYNAPSES: <span id="hud-synapses">0</span></div>
+                <div>ACTIVITY: <span id="hud-activity">NOMINAL</span></div>
+              </div>
+              <div class="bio-hud-bottom-right">
+                <div>SIGNAL: <span class="accent-glow" id="hud-signal">STABLE</span></div>
+                <div>MODE: NEURAL</div>
+              </div>
+
+              <!-- Tooltip -->
+              <div id="neural-tooltip" class="neural-tooltip"></div>
+            </div>
+          </div>
+          <div>
+            <div class="spec-sheet">
+              <div class="spec-row"><span class="spec-key">UNIT</span><span class="spec-val">Janit Yadav</span></div>
+              <div class="spec-row"><span class="spec-key">ROLE</span><span class="spec-val">Full Stack Developer</span></div>
+              <div class="spec-row"><span class="spec-key">LOCATION</span><span class="spec-val">India</span></div>
+              <div class="spec-row"><span class="spec-key">STACK</span><span class="spec-val">React / Python / Node.js</span></div>
+              <div class="spec-row"><span class="spec-key">SPECIALITY</span><span class="spec-val">Deep Learning + Computer Vision</span></div>
+              <div class="spec-row"><span class="spec-key">STATUS</span><span class="spec-val status-active"><span class="status-dot"></span> AVAILABLE FOR HIRE</span></div>
+              <div class="spec-row"><span class="spec-key">GITHUB</span><span class="spec-val">github.com/janityadav16</span></div>
+              <div class="spec-row"><span class="spec-key">DEPLOY_ENV</span><span class="spec-val">Production-ready</span></div>
+            </div>
+            <div class="stat-cards">
+              <div class="stat-card mouse-glow-target"><div class="stat-num" id="stat1">2+</div><div class="stat-label">Projects</div></div>
+              <div class="stat-card mouse-glow-target"><div class="stat-num" id="stat2">1K+</div><div class="stat-label">Hrs Coded</div></div>
+              <div class="stat-card mouse-glow-target"><div class="stat-num" id="stat3">99%</div><div class="stat-label">Accuracy</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FEATURE 4: VERTICAL TIMELINE SECTION ── -->
+    <section id="timeline" class="section">
+      <div class="container">
+        <div class="section-eyebrow">
+          <svg class="katana-icon" viewBox="0 0 60 8" width="60" height="8"><line x1="0" y1="4" x2="48" y2="4" stroke="#5b6ef5" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><polygon points="48,1 60,4 48,7" fill="#5b6ef5" opacity="0.5"/><rect x="12" y="3" width="1" height="2" fill="#5b6ef5" opacity="0.8"/><rect x="20" y="3" width="1" height="2" fill="#5b6ef5" opacity="0.6"/><circle cx="2" cy="4" r="1.5" fill="#5b6ef5" opacity="0.7"/></svg>
+          // 03 — JOURNEY
+        </div>
+        <h2 class="section-heading">THE STORY <span class="accent">SO FAR</span></h2>
+        <div class="heading-rule"></div>
+        <div class="hud-line">CHRONOLOGICAL_LOG // ASCENDING</div>
+
+        <div class="timeline-wrap">
+          <!-- Item 1 -->
+          <div class="timeline-item timeline-item-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2023 — ORIGIN</div>
+            <h3 class="timeline-title">BCA Manipal University Jaipur</h3>
+            <p class="timeline-desc">Started BCA at Manipal University Jaipur. First lines of production code. Immediately obsessed.</p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">EDUCATION BEGINS</span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item timeline-item-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2024 — FOUNDATION</div>
+            <h3 class="timeline-title">First Machine Learning Projects</h3>
+            <p class="timeline-desc">Built first ML projects — Object Detection and LeafLens plant disease classifier. Learned that shipping beats studying.</p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">FIRST PROJECTS SHIPPED</span>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item timeline-item-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">Early 2025 — PRODUCT</div>
+            <h3 class="timeline-title">Recutr.dev Launch</h3>
+            <p class="timeline-desc">Started building Recutr.dev — an AI mock interview platform. First time taking something from idea to real users.</p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">RECUTR.DEV LAUNCHED</span>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item timeline-item-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">Late 2025 — SCALE</div>
+            <h3 class="timeline-title">Global Exploration</h3>
+            <p class="timeline-desc">Recutr grows. Started exploring graduate programmes globally — TU/e, UK MScs, University of Potsdam.</p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">GOING GLOBAL</span>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="timeline-item timeline-item-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2026 — NOW</div>
+            <h3 class="timeline-title">Graduation & Opportunity</h3>
+            <p class="timeline-desc">Final semester. CGPA 8.62. Graduating May 2026. Looking for the next hard problem to solve.</p>
+            <div class="timeline-tags">
+              <span class="timeline-tag success">AVAILABLE NOW</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cyber-divider"><div class="cd-line"></div><div class="cd-label">// LOADING_WEAPONS</div><div class="cd-line"></div></div>
+
+    <!-- ══ ARSENAL ══ -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-eyebrow">
+          <svg class="katana-icon" viewBox="0 0 60 8" width="60" height="8"><line x1="0" y1="4" x2="48" y2="4" stroke="#00dbe9" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><polygon points="48,1 60,4 48,7" fill="#00dbe9" opacity="0.5"/><rect x="12" y="3" width="1" height="2" fill="#00dbe9" opacity="0.8"/><rect x="20" y="3" width="1" height="2" fill="#00dbe9" opacity="0.6"/><circle cx="2" cy="4" r="1.5" fill="#00dbe9" opacity="0.7"/></svg>
+          // 02 — TECH ARSENAL
+        </div>
+        <h2 class="section-heading">TECH <span class="accent">ARSENAL</span></h2>
+        <div class="heading-rule"></div>
+        <p class="section-sub">Every tool I've wielded in production</p>
+        
+        <div class="skills-grid-new">
+          <!-- COLUMN 1 — FRONTEND & FULLSTACK -->
+          <div class="skills-col-new">
+            <div class="skills-cat-label">FRONTEND & FULLSTACK</div>
+            <div class="skills-chips-new">
+              <span class="skill-chip-new">React</span>
+              <span class="skill-chip-new">JavaScript</span>
+              <span class="skill-chip-new">Node.js</span>
+              <span class="skill-chip-new">CSS/Tailwind</span>
+              <span class="skill-chip-new">REST APIs</span>
+            </div>
+          </div>
+          
+          <!-- COLUMN 2 — AI / ML -->
+          <div class="skills-col-new">
+            <div class="skills-cat-label">AI / ML</div>
+            <div class="skills-chips-new">
+              <span class="skill-chip-new">Python</span>
+              <span class="skill-chip-new">Machine Learning</span>
+              <span class="skill-chip-new">Deep Learning</span>
+              <span class="skill-chip-new">Computer Vision</span>
+              <span class="skill-chip-new">Flask</span>
+              <span class="skill-chip-new">TensorFlow</span>
+            </div>
+          </div>
+          
+          <!-- COLUMN 3 — TOOLS & INFRA -->
+          <div class="skills-col-new">
+            <div class="skills-cat-label">TOOLS & INFRA</div>
+            <div class="skills-chips-new">
+              <span class="skill-chip-new">Git/GitHub</span>
+              <span class="skill-chip-new">Linux/Shell</span>
+              <span class="skill-chip-new">Cloud Computing</span>
+              <span class="skill-chip-new">MongoDB</span>
+              <span class="skill-chip-new">SQL</span>
+              <span class="skill-chip-new">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-learning">
+          currently learning → LangChain · Next.js · Vector DBs
+        </div>
+      </div>
+    </section>
+
+    <div class="cyber-divider"><div class="cd-line"></div><div class="cd-label">// ACCESSING_DEPLOYMENTS</div><div class="cd-line"></div></div>
+
+    <!-- ══ PROJECTS ══ -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-eyebrow">
+          <svg class="katana-icon" viewBox="0 0 60 8" width="60" height="8"><line x1="0" y1="4" x2="48" y2="4" stroke="#00dbe9" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><polygon points="48,1 60,4 48,7" fill="#00dbe9" opacity="0.5"/><rect x="12" y="3" width="1" height="2" fill="#00dbe9" opacity="0.8"/><rect x="20" y="3" width="1" height="2" fill="#00dbe9" opacity="0.6"/><circle cx="2" cy="4" r="1.5" fill="#00dbe9" opacity="0.7"/></svg>
+          // 03 — PROJECTS
+        </div>
+        <h2 class="section-heading">DEPLOYED <span class="accent">PROJECTS</span></h2>
+        <div class="heading-rule"></div>
+        <div class="hud-line">ACTIVE_DEPLOYMENTS // 03 UNITS ONLINE</div>
+        <div class="projects-intro">
+          <span class="projects-count">3 Projects Shipped</span>
+          <a href="https://github.com/janityadav16" target="_blank" class="project-link">All projects on GitHub →</a>
+        </div>
+        
+        <!-- Feature 1: Project Filter Tabs -->
+        <div class="projects-filter-container">
+          <button class="filter-tab active" data-filter="all">ALL</button>
+          <button class="filter-tab" data-filter="aiml">AI/ML</button>
+          <button class="filter-tab" data-filter="fullstack">FULL STACK</button>
+          <button class="filter-tab" data-filter="live">LIVE</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- CARD 1: RECUTR -->
+          <div class="project-card featured" 
+               data-tags="all fullstack live">
+            <div style="display:flex;justify-content:space-between;
+              align-items:flex-start;margin-bottom:16px">
+              <span style="font-family:monospace;font-size:11px;
+                color:rgba(91,110,245,0.45);letter-spacing:0.15em">
+                01
+              </span>
+              <div style="display:flex;gap:8px">
+                <span style="background:rgba(91,110,245,0.15);
+                  border:1px solid rgba(91,110,245,0.35);
+                  color:#5b6ef5;border-radius:4px;padding:3px 10px;
+                  font-size:10px;font-family:monospace;
+                  letter-spacing:0.1em">FEATURED</span>
+                <span style="background:rgba(74,222,128,0.10);
+                  border:1px solid rgba(74,222,128,0.25);
+                  color:#4ade80;border-radius:4px;padding:3px 10px;
+                  font-size:10px;font-family:monospace;
+                  letter-spacing:0.1em">LIVE</span>
+              </div>
+            </div>
+            <h3 style="color:#e8eaf6;font-size:20px;font-weight:600;
+              margin:0 0 10px;font-family:monospace">
+              Recutr.dev
+            </h3>
+            <p style="color:#8892a4;font-size:13px;line-height:1.75;
+              margin-bottom:18px">
+              AI-powered mock interview platform that simulates real 
+              interview conditions, gives instant feedback on answers, 
+              and helps candidates improve before the actual thing. 
+              Built end-to-end from scratch — currently live with 
+              real users.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;
+              margin-bottom:16px">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Python</span>
+              <span class="tag">OpenAI API</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">Full Stack</span>
+            </div>
+            <div style="color:#4ade80;font-size:11px;
+              font-family:monospace;margin-bottom:18px">
+              ▸ Live Product · Real Users
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <a href="https://recutr.dev" target="_blank" 
+                 class="btn-primary">LIVE DEMO →</a>
+              <a href="https://github.com/janityadav16" 
+                 target="_blank" class="btn-outline">GITHUB ↗</a>
+            </div>
+          </div>
+
+          <!-- CARD 2: LEAFLENS -->
+          <div class="project-card" data-tags="all aiml">
+            <span style="font-family:monospace;font-size:11px;
+              color:rgba(91,110,245,0.45);letter-spacing:0.15em;
+              display:block;margin-bottom:16px">02</span>
+            <h3 style="color:#e8eaf6;font-size:20px;font-weight:600;
+              margin:0 0 10px;font-family:monospace">
+              LeafLens
+            </h3>
+            <p style="color:#8892a4;font-size:13px;line-height:1.75;
+              margin-bottom:18px">
+              AI-powered plant disease classification using fine-tuned 
+              ResNet50 CNN. Trained on 87,000+ images across 38 disease 
+              classes. Deployed via Flask with 99.1% validation accuracy.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;
+              margin-bottom:16px">
+              <span class="tag">Python</span>
+              <span class="tag">ResNet50</span>
+              <span class="tag">Flask</span>
+              <span class="tag">TensorFlow</span>
+              <span class="tag">Deep Learning</span>
+            </div>
+            <div style="color:#4ade80;font-size:11px;
+              font-family:monospace;margin-bottom:18px">
+              ▸ 87K+ Training Images · 99.1% Accuracy
+            </div>
+            <a href="https://github.com/janityadav16" target="_blank"
+               class="btn-outline">GITHUB ↗</a>
+          </div>
+
+          <!-- CARD 3: OBJECT DETECTION -->
+          <div class="project-card" data-tags="all aiml">
+            <span style="font-family:monospace;font-size:11px;
+              color:rgba(91,110,245,0.45);letter-spacing:0.15em;
+              display:block;margin-bottom:16px">03</span>
+            <h3 style="color:#e8eaf6;font-size:20px;font-weight:600;
+              margin:0 0 10px;font-family:monospace">
+              Object Detection System
+            </h3>
+            <p style="color:#8892a4;font-size:13px;line-height:1.75;
+              margin-bottom:18px">
+              Real-time object detection using YOLO architecture. 
+              High-speed bounding box prediction across multiple 
+              object classes with optimized inference for live 
+              video streams.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;
+              margin-bottom:18px">
+              <span class="tag">Python</span>
+              <span class="tag">YOLO</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">Deep Learning</span>
+            </div>
+            <a href="https://github.com/janityadav16" target="_blank"
+               class="btn-outline">GITHUB ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cyber-divider"><div class="cd-line"></div><div class="cd-label">// OPEN_CHANNEL</div><div class="cd-line"></div></div>
+
+    <!-- ══ CONTACT ══ -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-eyebrow">
+          <svg class="katana-icon" viewBox="0 0 60 8" width="60" height="8"><line x1="0" y1="4" x2="48" y2="4" stroke="#00dbe9" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><polygon points="48,1 60,4 48,7" fill="#00dbe9" opacity="0.5"/><rect x="12" y="3" width="1" height="2" fill="#00dbe9" opacity="0.8"/><rect x="20" y="3" width="1" height="2" fill="#00dbe9" opacity="0.6"/><circle cx="2" cy="4" r="1.5" fill="#00dbe9" opacity="0.7"/></svg>
+          // 04 — CONTACT
+        </div>
+        <div class="section-heading">GOT AN <span class="accent">IDEA?</span></div>
+        <div class="heading-rule"></div>
+        <div class="signal-status"><span class="status-dot"></span>SIGNAL STRENGTH: MAXIMUM<span class="status-sep">//</span>RESPONSE_TIME: &lt;24H</div>
+        <div class="trust-badges"><span>Available now</span><span>Remote friendly</span><span>Open to relocation</span></div>
+        <div class="contact-form-container">
+          <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form-card">
+            <div class="cf-row">
+              <div class="cf-group">
+                <label class="cf-label">Name</label>
+                <input type="text" name="name" class="cf-input" placeholder="your name" required>
+              </div>
+              <div class="cf-group">
+                <label class="cf-label">Email</label>
+                <input type="email" name="email" class="cf-input" placeholder="your@email.com" required>
+              </div>
+            </div>
+
+            <div class="cf-group">
+              <label class="cf-label">Subject</label>
+              <input type="text" name="subject" class="cf-input" placeholder="what's this about?" required>
+            </div>
+
+            <div class="cf-group">
+              <label class="cf-label">Message</label>
+              <textarea name="message" class="cf-input cf-textarea" rows="6" placeholder="tell me what you're building..." required></textarea>
+            </div>
+
+            <button type="submit" class="cf-submit-btn" id="cfSubmitBtn">SEND MESSAGE</button>
+            <div id="formStatus" class="form-status-msg" style="display: none; margin-top: 1rem; font-family: var(--font-mono); font-size: 13px;"></div>
+          </form>
+        </div>
+
+        <div class="social-links-row">
+          <a href="https://github.com/janityadav16" target="_blank" class="social-card mouse-glow-target">
+            <div class="sc-icon">GH</div><div class="sc-info"><div class="sc-name">GitHub</div><div class="sc-handle">github.com/janityadav16</div></div><span class="sc-arrow">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/janit-yadav-461140279/" target="_blank" class="social-card mouse-glow-target">
+            <div class="sc-icon">LI</div><div class="sc-info"><div class="sc-name">LinkedIn</div><div class="sc-handle">Janit Yadav</div></div><span class="sc-arrow">↗</span>
+          </a>
+          <a href="https://x.com/janityadav16" target="_blank" class="social-card mouse-glow-target">
+            <div class="sc-icon">X</div><div class="sc-info"><div class="sc-name">Twitter / X</div><div class="sc-handle">@janityadav16</div></div><span class="sc-arrow">↗</span>
+          </a>
+          <a href="mailto:janityadav16@gmail.com" class="social-card mouse-glow-target">
+            <div class="sc-icon">@</div><div class="sc-info"><div class="sc-name">Email</div><div class="sc-handle">janityadav16@gmail.com</div></div><span class="sc-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-left"><div class="footer-name">Janit Yadav</div><div class="footer-role">Full Stack Developer</div></div>
+        <div class="footer-center">© 2026 JANIT YADAV // SYNTHETIC DEV PROTOCOL</div>
+        <div class="footer-right">
+          <a href="https://github.com/janityadav16" target="_blank">GITHUB</a>
+          <a href="https://www.linkedin.com/in/janit-yadav-461140279/" target="_blank">LINKEDIN</a>
+          <a href="https://x.com/janityadav16" target="_blank">TWITTER</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <a href="#contact" class="open-to-work"><span class="ow-dot"></span>OPEN TO WORK</a>
+
+  <!-- ── FEATURE 6: CURSOR TRAIL EFFECT ── -->
+  <canvas id="trailCanvas" style="position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 9998; pointer-events: none;"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="script.js"></script>
+  <script src="js/blade.js"></script>
+  <script src="js/forge.js"></script>
+  <script src="js/neural.js"></script>
+  <script src="js/transition.js"></script>
+</body>
+</html>

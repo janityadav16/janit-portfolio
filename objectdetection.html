@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050507">
+  <meta name="description" content="Object Detection — Real-time multi-object detection with YOLO. Built by Janit Yadav.">
+  <title>Object Detection | Janit Yadav</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23050507'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-weight='800' font-size='14' fill='%2300dbe9'>JY</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,600;0,700;1,700&family=Geist:wght@300;400;500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="forge_additions.css">
+</head>
+<body>
+
+  <div class="mythic-transition">
+    <div class="void-bg"></div>
+    <canvas id="mythic-canvas"></canvas>
+    <div class="rune-circle"></div>
+    <div class="eclipse-portal"></div>
+  </div>
+  <div class="viewport-frame"><div class="corner corner-tl"></div><div class="corner corner-tr"></div><div class="corner corner-bl"></div><div class="corner corner-br"></div></div>
+  <div class="scanline-overlay"></div><div class="scroll-progress"></div>
+  <nav>
+    <a href="index.html" class="nav-logo"><span class="nav-logo-mark">JY</span><span class="nav-logo-name">Janit Yadav</span><span class="nav-status"><span class="status-dot"></span>SYSTEM: ACTIVE</span></a>
+    <ul class="nav-links"><li><a href="index.html">HOME</a></li><li><a href="index.html#projects" class="active">PROJECTS</a></li><li><a href="index.html#contact">CONTACT</a></li></ul>
+    <a href="index.html#contact" class="nav-cta">HIRE ME →</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">✕</button>
+    <a href="index.html" onclick="closeMobile()">HOME</a>
+    <a href="index.html#projects" onclick="closeMobile()">PROJECTS</a>
+    <a href="index.html#contact" onclick="closeMobile()">CONTACT</a>
+  </div>
+  <main>
+    <section class="detail-hero">
+      <div class="container">
+        <a href="index.html#projects" class="back-btn">← RETURN TO BASE</a>
+        <div style="display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:3rem">
+          <div style="flex:1;min-width:280px">
+            <div class="section-eyebrow"><svg class="katana-icon" viewBox="0 0 60 8" width="60" height="8"><line x1="0" y1="4" x2="48" y2="4" stroke="#00dbe9" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/><polygon points="48,1 60,4 48,7" fill="#00dbe9" opacity="0.5"/><circle cx="2" cy="4" r="1.5" fill="#00dbe9" opacity="0.7"/></svg> // PROJECT 02</div>
+            <h1 class="section-heading" id="pageTitle">OBJECT <span class="accent">DETECTION</span></h1>
+            <div class="heading-rule"></div>
+            <p style="font-size:1rem;color:var(--text-secondary);margin-bottom:1.5rem">Real-time Multi-Object Detection with Deep Learning</p>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap">
+              <a href="https://github.com/janityadav16/Minor-project-" target="_blank" class="btn-primary">VIEW ON GITHUB →</a>
+              <a href="index.html#projects" class="btn-secondary">ALL PROJECTS</a>
+            </div>
+          </div>
+        </div>
+        <div class="detail-cards-grid">
+          <div class="detail-card mouse-glow-target"><div class="detail-card-title" style="color:var(--purple)">ABOUT THE PROJECT</div><p class="detail-card-body">A real-time object detection system that leverages deep learning to identify and classify multiple objects simultaneously within images and video streams. Built for high-speed, high-precision detection tasks.</p></div>
+          <div class="detail-card mouse-glow-target"><div class="detail-card-title" style="color:var(--cyan)">TECH STACK</div><div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem"><span class="spec-chip">Python</span><span class="spec-chip">YOLO</span><span class="spec-chip">OpenCV</span><span class="spec-chip">Deep Learning</span><span class="spec-chip">Computer Vision</span></div></div>
+        </div>
+        <div class="detail-cards-grid">
+          <div class="detail-card mouse-glow-target"><div class="detail-card-title" style="color:var(--green)">KEY FEATURES</div><ul class="detail-feature-list" style="margin-top:0.5rem"><li>Real-time Video Processing</li><li>Multi-Object Classification</li><li>Image &amp; Video Stream Support</li><li>Bounding Box with Confidence Scores</li></ul></div>
+          <div class="detail-card mouse-glow-target"><div class="detail-card-title" style="color:var(--purple)">HOW IT WORKS</div><div style="margin-top:0.5rem"><div class="detail-step"><span class="detail-step-num">01.</span> Input image or video stream</div><div class="detail-step"><span class="detail-step-num">02.</span> YOLO model detects objects in milliseconds</div><div class="detail-step"><span class="detail-step-num">03.</span> Bounding boxes drawn with labels &amp; confidence</div></div></div>
+        </div>
+        <div class="lesson-card"><strong>LESSON // </strong>Mastered YOLO architecture internals, real-time inference optimization, and efficient frame processing pipelines for computer vision applications.</div>
+      </div>
+    </section>
+    <footer><div class="footer-inner"><div class="footer-left"><div class="footer-name">Janit Yadav</div><div class="footer-role">Full Stack Developer</div></div><div class="footer-center">© 2026 JANIT YADAV // SYNTHETIC DEV PROTOCOL</div><div class="footer-right"><a href="https://github.com/janityadav16" target="_blank">GITHUB</a><a href="https://www.linkedin.com/in/janit-yadav-461140279/" target="_blank">LINKEDIN</a><a href="https://x.com/janityadav16" target="_blank">TWITTER</a></div></div></footer>
+  </main>
+  <a href="index.html#contact" class="open-to-work"><span class="ow-dot"></span>OPEN TO WORK</a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="script.js"></script>
+  <script src="js/forge.js"></script>
+  <script src="js/transition.js"></script>
+</body>
+</html>
