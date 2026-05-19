@@ -691,4 +691,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* ── INTERACTIVE 3D TECH CARDS TILT ── */
+  const cards = document.querySelectorAll('.tech-card-3d');
+  cards.forEach(card => {
+    const inner = card.querySelector('.card-inner');
+    const glare = card.querySelector('.card-glare');
+    
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 to 0.5
+      const y = (e.clientY - rect.top) / rect.height - 0.5; // -0.5 to 0.5
+      
+      // Calculate rotation angles (max 15 degrees)
+      const rotateX = -y * 15;
+      const rotateY = x * 15;
+      
+      // Apply 3D transform with slight translation on Z for elevation
+      inner.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(12px)`;
+      
+      // Parallax shift on card contents for depth layering
+      const icon = card.querySelector('.tech-icon-wrap');
+      const title = card.querySelector('.tech-card-title');
+      if (icon) icon.style.transform = `translateZ(25px) translate(${x * 10}px, ${y * 10}px)`;
+      if (title) title.style.transform = `translateZ(20px) translate(${x * 6}px, ${y * 6}px)`;
+      
+      // Dynamic mouse glare reflection positioning
+      if (glare) {
+        glare.style.opacity = '0.15';
+        glare.style.background = `radial-gradient(circle 100px at ${e.clientX - rect.left}px ${e.clientY - rect.top}px, rgba(255, 255, 255, 0.4), transparent 80%)`;
+      }
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      // Smooth reset transition
+      inner.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+      
+      const icon = card.querySelector('.tech-icon-wrap');
+      const title = card.querySelector('.tech-card-title');
+      if (icon) icon.style.transform = 'translateZ(0px) translate(0px, 0px)';
+      if (title) title.style.transform = 'translateZ(0px) translate(0px, 0px)';
+      
+      if (glare) {
+        glare.style.opacity = '0';
+      }
+    });
+  });
+
 });

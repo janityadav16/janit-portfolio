@@ -23,35 +23,48 @@ const hudSignal = document.getElementById('hud-signal');
 // Configuration
 const COLORS = {
   core: { hex: '#ffffff', r:255, g:255, b:255 },
-  frontend: { hex: '#4dd2ff', r:77, g:210, b:255 }, // Cyan
-  ai: { hex: '#b300ff', r:179, g:0, b:255 },      // Purple
-  project: { hex: '#22c55e', r:34, g:197, b:94 }   // Green
+  frontend: { hex: '#00dbe9', r:0, g:219, b:233 },    // Neon Cyan
+  ai: { hex: '#b300ff', r:179, g:0, b:255 },        // Neon Purple
+  project: { hex: '#4ade80', r:74, g:222, b:128 }   // Neon Green
 };
 
 const NODE_DEFS = [
   // CORE
-  { id: 'core', label: 'JANIT.exe', group: 'core', size: 25, xPct: 0.5, yPct: 0.5, stat: 'SYSTEM CORE' },
+  { id: 'core', label: 'JANIT.exe', group: 'core', size: 24, xPct: 0.5, yPct: 0.5, stat: 'SYSTEM CORE' },
   // FRONTEND (Cyan)
-  { id: 'react', label: 'React', group: 'frontend', size: 15, xPct: 0.2, yPct: 0.2, stat: 'Proficiency: 90%', icon: 'react/react-original.svg' },
-  { id: 'ts', label: 'TypeScript', group: 'frontend', size: 14, xPct: 0.35, yPct: 0.15, stat: 'Proficiency: 80%', icon: 'typescript/typescript-original.svg' },
-  { id: 'tw', label: 'Tailwind', group: 'frontend', size: 14, xPct: 0.15, yPct: 0.4, stat: 'Proficiency: 80%', icon: 'tailwindcss/tailwindcss-original.svg' },
-  { id: 'node', label: 'Node.js', group: 'frontend', size: 16, xPct: 0.3, yPct: 0.3, stat: 'Proficiency: 80%', icon: 'nodejs/nodejs-original.svg' },
+  { id: 'react', label: 'React', group: 'frontend', size: 14, xPct: 0.2, yPct: 0.2, stat: 'Proficiency: 90%', icon: 'react/react-original.svg' },
+  { id: 'ts', label: 'TypeScript', group: 'frontend', size: 13, xPct: 0.35, yPct: 0.15, stat: 'Proficiency: 80%', icon: 'typescript/typescript-original.svg' },
+  { id: 'tw', label: 'Tailwind', group: 'frontend', size: 13, xPct: 0.15, yPct: 0.4, stat: 'Proficiency: 80%', icon: 'tailwindcss/tailwindcss-original.svg' },
+  { id: 'node', label: 'Node.js', group: 'frontend', size: 15, xPct: 0.3, yPct: 0.3, stat: 'Proficiency: 80%', icon: 'nodejs/nodejs-original.svg' },
   { id: 'sql', label: 'SQL', group: 'frontend', size: 12, xPct: 0.15, yPct: 0.6, stat: 'Proficiency: 75%', icon: 'azuresqldatabase/azuresqldatabase-original.svg' },
   { id: 'rest', label: 'REST APIs', group: 'frontend', size: 12, xPct: 0.25, yPct: 0.75, stat: 'Proficiency: 85%', icon: 'networkx/networkx-original.svg' },
-  { id: 'python', label: 'Python', group: 'frontend', size: 18, xPct: 0.4, yPct: 0.8, stat: 'Proficiency: 90%', icon: 'python/python-original.svg' },
+  { id: 'python', label: 'Python', group: 'frontend', size: 16, xPct: 0.4, yPct: 0.8, stat: 'Proficiency: 90%', icon: 'python/python-original.svg' },
   // AI (Purple)
-  { id: 'dl', label: 'Deep Learning', group: 'ai', size: 18, xPct: 0.7, yPct: 0.2, stat: 'Proficiency: 85%', icon: 'tensorflow/tensorflow-original.svg' },
-  { id: 'cnn', label: 'CNN', group: 'ai', size: 15, xPct: 0.85, yPct: 0.3, stat: 'Proficiency: 85%', icon: 'pytorch/pytorch-original.svg' },
-  { id: 'cv', label: 'Comp Vision', group: 'ai', size: 16, xPct: 0.75, yPct: 0.5, stat: 'Proficiency: 80%', icon: 'numpy/numpy-original.svg' },
-  { id: 'opencv', label: 'OpenCV', group: 'ai', size: 15, xPct: 0.8, yPct: 0.7, stat: 'Proficiency: 80%', icon: 'opencv/opencv-original.svg' },
+  { id: 'dl', label: 'Deep Learning', group: 'ai', size: 16, xPct: 0.7, yPct: 0.2, stat: 'Proficiency: 85%', icon: 'tensorflow/tensorflow-original.svg' },
+  { id: 'cnn', label: 'CNN', group: 'ai', size: 14, xPct: 0.85, yPct: 0.3, stat: 'Proficiency: 85%', icon: 'pytorch/pytorch-original.svg' },
+  { id: 'cv', label: 'Comp Vision', group: 'ai', size: 15, xPct: 0.75, yPct: 0.5, stat: 'Proficiency: 80%', icon: 'numpy/numpy-original.svg' },
+  { id: 'opencv', label: 'OpenCV', group: 'ai', size: 14, xPct: 0.8, yPct: 0.7, stat: 'Proficiency: 80%', icon: 'opencv/opencv-original.svg' },
   // PROJECTS (Green)
-  { id: 'leaf', label: 'LeafLens', group: 'project', size: 20, xPct: 0.65, yPct: 0.85, stat: 'Status: Deployed', textIcon: 'LL' },
-  { id: 'obj', label: 'Obj Detect', group: 'project', size: 20, xPct: 0.85, yPct: 0.85, stat: 'Status: Live', textIcon: 'OD' }
+  { id: 'leaf', label: 'LeafLens', group: 'project', size: 18, xPct: 0.65, yPct: 0.85, stat: 'Status: Deployed', textIcon: 'LL' },
+  { id: 'obj', label: 'Obj Detect', group: 'project', size: 18, xPct: 0.85, yPct: 0.85, stat: 'Status: Live', textIcon: 'OD' }
 ];
 
 const nodes = [];
 const edges = [];
 let signals = [];
+const ambientParticles = [];
+
+// Initialize Ambient Floating Particles
+for(let i=0; i<25; i++) {
+  ambientParticles.push({
+    x: Math.random() * W,
+    y: Math.random() * H,
+    vx: (Math.random() - 0.5) * 0.2,
+    vy: (Math.random() - 0.5) * 0.2,
+    size: Math.random() * 1.5 + 0.5,
+    alpha: Math.random() * 0.3 + 0.1
+  });
+}
 
 // Load Image Helper
 function loadIcon(path) {
@@ -107,15 +120,15 @@ class Signal {
     this.start = start; this.end = end;
     this.color = color;
     this.progress = 0;
-    this.speed = 0.005 + Math.random() * 0.01;
+    this.speed = 0.006 + Math.random() * 0.012;
   }
   update() { this.progress += this.speed; }
   draw(ctx) {
     const x = this.start.x + (this.end.x - this.start.x) * this.progress;
     const y = this.start.y + (this.end.y - this.start.y) * this.progress;
-    ctx.beginPath(); ctx.arc(x, y, 2, 0, Math.PI*2);
+    ctx.beginPath(); ctx.arc(x, y, 2.5, 0, Math.PI*2);
     ctx.fillStyle = this.color.hex; ctx.shadowColor = this.color.hex;
-    ctx.shadowBlur = 8; ctx.fill(); ctx.shadowBlur = 0;
+    ctx.shadowBlur = 10; ctx.fill(); ctx.shadowBlur = 0;
   }
 }
 
@@ -145,26 +158,54 @@ canvas.addEventListener('click', () => {
 let t = 0;
 function render() {
   ctx.clearRect(0, 0, W, H);
-  t += 0.05;
+  t += 0.04;
 
   // Background Grid (subtle)
-  ctx.strokeStyle = 'rgba(77,210,255,0.02)';
+  ctx.strokeStyle = 'rgba(0,219,233,0.015)';
   ctx.lineWidth = 1;
   for(let i=0; i<W; i+=40) { ctx.beginPath(); ctx.moveTo(i,0); ctx.lineTo(i,H); ctx.stroke(); }
   for(let i=0; i<H; i+=40) { ctx.beginPath(); ctx.moveTo(0,i); ctx.lineTo(W,i); ctx.stroke(); }
 
+  // Draw & Update Ambient Particles
+  ambientParticles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    if(p.x < 0) p.x = W; if(p.x > W) p.x = 0;
+    if(p.y < 0) p.y = H; if(p.y > H) p.y = 0;
+    
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(0, 219, 233, ${p.alpha})`;
+    ctx.fill();
+  });
+
   let activeHover = null;
   let networkActivity = 0;
 
-  // Update logic
+  // Update Node Positions (Breathing Physics + Mouse Attraction Gravity)
   nodes.forEach(n => {
-    // Breathing physics
-    n.x = (n.xPct * W) + Math.sin(t * 0.5 + n.baseSize) * 5;
-    n.y = (n.yPct * H) + Math.cos(t * 0.6 + n.baseSize) * 5;
+    // 1. Natural Sinusoidal Breathing
+    let targetX = (n.xPct * W) + Math.sin(t * 0.5 + n.baseSize) * 6;
+    let targetY = (n.yPct * H) + Math.cos(t * 0.6 + n.baseSize) * 6;
 
-    const dx = mouseX - n.x; const dy = mouseY - n.y;
+    // 2. Mouse Gravity / Magnetic Attraction
+    const dx = mouseX - targetX; 
+    const dy = mouseY - targetY;
     const dist = Math.sqrt(dx*dx + dy*dy);
-    n.hovered = dist < n.baseSize * 2;
+    
+    if(dist < 180) {
+      const force = (180 - dist) / 180;
+      // Core node is heavier/less responsive; others drift beautifully
+      const magneticFactor = n.id === 'core' ? 0.15 : 0.8;
+      targetX += (dx / dist) * force * 15 * magneticFactor;
+      targetY += (dy / dist) * force * 15 * magneticFactor;
+    }
+
+    // Apply soft lerp for motion damping
+    n.x += (targetX - n.x) * 0.1;
+    n.y += (targetY - n.y) * 0.1;
+
+    n.hovered = dist < n.baseSize * 1.8;
     if(n.hovered) activeHover = n;
 
     // Smooth glow transition
@@ -182,16 +223,42 @@ function render() {
     tt.classList.remove('active');
   }
 
-  // Draw Edges
+  // Draw Edges with animated pulses
   uniqueEdges.forEach(e => {
     ctx.beginPath(); ctx.moveTo(e.a.x, e.a.y); ctx.lineTo(e.b.x, e.b.y);
-    const alpha = 0.15 + (e.a.glow * 0.3) + (e.b.glow * 0.3);
+    const alpha = 0.12 + (e.a.glow * 0.28) + (e.b.glow * 0.28);
     ctx.strokeStyle = `rgba(${e.a.color.r},${e.a.color.g},${e.a.color.b},${alpha})`;
     ctx.lineWidth = 1; ctx.stroke();
   });
 
+  // Telemetry HUD spinning concentric rings around CORE
+  if (coreNode) {
+    // Inner Ring
+    ctx.strokeStyle = 'rgba(0, 219, 233, 0.08)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(coreNode.x, coreNode.y, 45, 0, Math.PI*2);
+    ctx.stroke();
+
+    // Outer spinning dashed telemetry ring (clockwise)
+    ctx.strokeStyle = 'rgba(179, 0, 255, 0.12)';
+    ctx.setLineDash([6, 12]);
+    ctx.beginPath();
+    ctx.arc(coreNode.x, coreNode.y, 65, t * 0.2, t * 0.2 + Math.PI*2);
+    ctx.stroke();
+
+    // Outermost spinning telemetry ring (counter-clockwise)
+    ctx.strokeStyle = 'rgba(0, 219, 233, 0.15)';
+    ctx.setLineDash([10, 15]);
+    ctx.beginPath();
+    ctx.arc(coreNode.x, coreNode.y, 82, -t * 0.3, -t * 0.3 + Math.PI*2);
+    ctx.stroke();
+    
+    ctx.setLineDash([]); // Reset dash array
+  }
+
   // Spontaneous Signals
-  if(Math.random() > 0.95 && signals.length < 10) {
+  if(Math.random() > 0.94 && signals.length < 12) {
     const randEdge = uniqueEdges[Math.floor(Math.random() * uniqueEdges.length)];
     const startNode = Math.random() > 0.5 ? randEdge.a : randEdge.b;
     const endNode = startNode === randEdge.a ? randEdge.b : randEdge.a;
@@ -213,20 +280,20 @@ function render() {
 
   // Draw Nodes
   nodes.forEach(n => {
-    const s = n.baseSize + (n.glow * 5) + (n.id==='core' ? Math.sin(t)*2 : 0);
+    const s = n.baseSize + (n.glow * 4) + (n.id==='core' ? Math.sin(t*1.5)*1.5 : 0);
     ctx.beginPath(); ctx.arc(n.x, n.y, s, 0, Math.PI*2);
-    ctx.fillStyle = `rgba(5,8,15,0.8)`;
+    ctx.fillStyle = `rgba(5,8,15,0.92)`;
     ctx.fill();
     
     ctx.strokeStyle = n.color.hex;
     ctx.lineWidth = 1.5 + (n.glow * 1);
     ctx.shadowColor = n.color.hex;
-    ctx.shadowBlur = 5 + (n.glow * 15);
+    ctx.shadowBlur = 6 + (n.glow * 16);
     ctx.stroke(); ctx.shadowBlur = 0;
 
     // Draw Icon or Text
     if(n.img && n.img.complete) {
-      const imgSize = s * 1.2;
+      const imgSize = s * 1.15;
       ctx.drawImage(n.img, n.x - imgSize/2, n.y - imgSize/2, imgSize, imgSize);
     } else {
       ctx.fillStyle = n.color.hex;
